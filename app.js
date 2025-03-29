@@ -11,14 +11,16 @@ const options = {
         "X-RapidAPI-Host": "twinword-word-association-quiz.p.rapidapi.com" 
     }
 };
-
-try {
-	const response = await fetch(url, options);
-	const result = await response.text();
-	console.log(result);
-} catch (error) {
-	console.error(error);
+async function fetchData(url, options) {
+    try {
+        const response = await fetch(url, options);
+        const result = await response.text();
+        console.log(result);
+    } catch (error) {
+        console.error(error);
+    }
 }
+
 
 const questions = [
     {
@@ -51,6 +53,7 @@ const questions = [
 let score = 0
 let clicked = []
 scoreDisplay.textContent = score
+
 
 function populateQuestions() {
     questions.forEach(question => {
@@ -90,8 +93,6 @@ function populateQuestions() {
     })
 }
 
-populateQuestions()
-
 
 function checkAnswer(questionBox, questionButtons, option, optionIndex, correctAnswer) {
     if (optionIndex === correctAnswer) {
@@ -112,6 +113,7 @@ function checkAnswer(questionBox, questionButtons, option, optionIndex, correctA
     }
 }
 
+
 function addResult(questionBox, answer, className) {
     const answerDisplay = questionBox.querySelector('.answer-display')
     answerDisplay.classList.remove('incorrect')
@@ -120,3 +122,6 @@ function addResult(questionBox, answer, className) {
     console.log(answerDisplay)
     answerDisplay.textContent = answer
 }
+
+fetchData(apiUrl, options)
+populateQuestions()
