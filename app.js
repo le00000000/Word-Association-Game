@@ -1,7 +1,7 @@
 const scoreDisplay = document.getElementById('score-display')
 const questionDisplay = document.getElementById('question-display')
 
-const apiUrl = "https://twinword-word-association-quiz.p.rapidapi.com/?rapidapi-key=9486777915msh9f69daa8af5aa98p10771bjsn8dcf09ee88c2"
+const apiUrl = "https://twinword-word-association-quiz.p.rapidapi.com/type1/?level=3&area=sat"
 const apiKey = "9486777915msh9f69daa8af5aa98p10771bjsn8dcf09ee88c2"
 
 const options = {
@@ -12,19 +12,13 @@ const options = {
     }
 };
 
-fetch(apiUrl, options)
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`Error: ${response.status}`);
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.log(data);
-    })
-    .catch(error => {
-        console.error("Error:", error);
-    });
+try {
+	const response = await fetch(url, options);
+	const result = await response.text();
+	console.log(result);
+} catch (error) {
+	console.error(error);
+}
 
 const questions = [
     {
