@@ -1,7 +1,7 @@
 const scoreDisplay = document.getElementById('score-display')
 const questionDisplay = document.getElementById('question-display')
 
-const apiUrl = "https://twinword-word-association-quiz.p.rapidapi.com"
+const apiUrl = "https://twinword-word-association-quiz.p.rapidapi.com/?rapidapi-key=9486777915msh9f69daa8af5aa98p10771bjsn8dcf09ee88c2"
 const apiKey = "9486777915msh9f69daa8af5aa98p10771bjsn8dcf09ee88c2"
 
 const options = {
