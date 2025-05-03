@@ -121,18 +121,21 @@ function changeRank(event = null) {
     if (event === null) {
         rank = nextRank()
         updateRankLevel(rank)
+        console.log(`Rank: ${rank}`)
+        apiUrl = `https://twinword-word-association-quiz.p.rapidapi.com/type1/?level=1&area=${rank}`
+        localStorage.setItem('rank', `${rank}`)
+        return
     }
     else {
         console.log('Selected Game rank:', event.target.value);
         let rank_value = event.target.value
         rank = Object.keys(gameRanks).find(key => gameRanks[key] === rank_value);
+        console.log(`Rank: ${rank}`)
+        apiUrl = `https://twinword-word-association-quiz.p.rapidapi.com/type1/?level=1&area=${rank}`
+        localStorage.setItem('rank', `${rank}`)
+        console.log(`API: ${apiUrl}`)
+        populateQuestions()
     }
-    console.log(`Rank: ${rank}`)
-    apiUrl = `https://twinword-word-association-quiz.p.rapidapi.com/type1/?level=1&area=${rank}`
-    localStorage.setItem('rank', `${rank}`)
-    console.log(`API: ${apiUrl}`)
-    questionCleanup()
-    populateQuestions()
 }
 
 
@@ -142,7 +145,7 @@ function changeLevel(event) {
     let rank = localStorage.getItem('rank')
     apiUrl = `https://twinword-word-association-quiz.p.rapidapi.com/type1/?level=${level}&area=${rank}`
     console.log(`API: ${apiUrl}`)
-    questionCleanup()
+    // questionCleanup()
     populateQuestions()
 }
 
@@ -154,6 +157,7 @@ function questionCleanup() {
 
 
 async function populateQuestions() {
+    questionCleanup()
     console.log(`API: ${apiUrl}`)
     let questions = await fetchData(apiUrl, options)
     console.log(`type ${typeof(questions)}`)
