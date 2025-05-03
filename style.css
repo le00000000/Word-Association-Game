@@ -30,6 +30,55 @@ body {
   padding: 4rem 5rem;
 }
 
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+}
+.status-bar h3 {
+  display: flex;
+  text-transform: capitalize;
+  text-align: center;
+}
+.status-bar h3 span {
+  color: var(--color-secondary);
+  margin-left: 0.7rem;
+}
+
+.rank select {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-size: 1rem;
+  width: 10rem;
+  margin-left: 0.7rem;
+  cursor: pointer;
+  border-radius: 0.7rem;
+  border: 0.1rem solid var(--color-grey0);
+}
+.rank h3 {
+  display: flex;
+  text-transform: capitalize;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.level h3 {
+  display: flex;
+  text-transform: capitalize;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+.level input {
+  background-color: var(--color-primary);
+  font-size: 1rem;
+  margin-left: 0.7rem;
+  width: 10rem;
+  color: var(--color-white);
+  border-radius: 0.3rem;
+  border: 0.1rem solid var(--color-grey0);
+  cursor: pointer;
+  padding: 0.2rem 0;
+}
+
 h2 {
   position: relative;
   text-transform: uppercase;
@@ -50,15 +99,6 @@ h2 .bg-text {
   transform: translate(-50%, -50%);
   font-weight: 800;
   font-size: 4.5rem;
-}
-
-.question-area h3 {
-  text-transform: capitalize;
-  text-align: center;
-  padding: 5rem 0 0 0;
-}
-.question-area h3 span {
-  color: var(--color-secondary);
 }
 
 .questions {

@@ -30,10 +30,59 @@ body {
     padding: 4rem 5rem;
 }
 
-// .question-area {
-//     display: flex;
-//     padding: 2rem;
-// }
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    h3 {
+        display: flex;
+        text-transform: capitalize;
+        text-align: center;
+        span {
+            color: var(--color-secondary);
+            margin-left: 0.7rem;
+        }
+    }
+}
+
+.rank {
+    select {
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        font-size: 1rem;
+        width: 10rem;
+        margin-left: 0.7rem;
+        cursor: pointer;
+        border-radius: 0.7rem;
+        border: 0.1rem solid var(--color-grey0);
+    }
+    h3 {
+        display: flex;
+        text-transform: capitalize;
+        text-align: center;
+        padding: 0.5rem 0;
+    }
+}
+
+.level {
+    h3 {
+        display: flex;
+        text-transform: capitalize;
+        text-align: center;
+        padding: 0.5rem 0;
+    }
+    input {
+        background-color: var(--color-primary);
+        font-size: 1rem;
+        margin-left: 0.7rem;
+        width: 10rem;
+        color: var(--color-white);
+        border-radius: 0.3rem;
+        border: 0.1rem solid var(--color-grey0);
+        cursor: pointer;
+        padding: 0.2rem 0;
+    }
+}
+
 
 h2{
     position: relative;
@@ -57,14 +106,14 @@ h2{
     }
 }
 
-.question-area h3 {
-    text-transform: capitalize;
-    text-align: center;
-    padding: 5rem 0 0 0;
-    span {
-        color: var(--color-secondary);
-    }
-}
+// .question-area h3 {
+//     text-transform: capitalize;
+//     text-align: center;
+//     padding: 5rem 0 0 0;
+//     span {
+//         color: var(--color-secondary);
+//     }
+// }
 
 .questions {
     display: flex;
